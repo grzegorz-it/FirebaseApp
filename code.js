@@ -220,7 +220,7 @@ FirebaseApp_._buildRequest = function (method, base, path, data, optQueryParamet
     var parameters = [];
     for (var key in optQueryParameters) {
       if (key != "auth" && key != "shallow" && key != "print" && key != "limitToFirst" && key != "limitToLast") {
-        if (isNaN(optQueryParameters[key]) && typeof optQueryParameters[key] !== 'boolean') {
+        if (typeof optQueryParameters[key] === 'string') {
           optQueryParameters[key] = encodeURIComponent('"' + optQueryParameters[key] + '"');
         }
       }
